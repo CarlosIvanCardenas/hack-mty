@@ -51,7 +51,7 @@ const Common = {
     info: {
         color: 'black',
         textAlign: 'center',
-        fontSize: 140,
+        fontSize: 14,
     }
 };
 

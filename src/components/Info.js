@@ -5,7 +5,8 @@ import {
     View,
     Text,
     StyleSheet,
-    TouchableHighlight
+    TouchableHighlight,
+    ScrollView
 } from 'react-native'
 
 import commonStyles from "../styles/common.css";
@@ -23,11 +24,11 @@ class Info extends Component{
 
     render(){
         return(
-            <View style={commonStyles.container} >
+            <ScrollView  >
                 <Text style={commonStyles.infoTitle} >{this.state.title}</Text>
                 <Text style={commonStyles.infoSubtitle} >{this.state.subtitle}</Text>
                 <Text style={commonStyles.info} >{this.state.info}</Text>
-            </View>
+            </ScrollView>
         );
     }
 }
