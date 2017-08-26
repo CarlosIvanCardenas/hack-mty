@@ -9,11 +9,14 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  DeviceEventEmitter
 } from 'react-native';
+
 import Tabs from 'react-native-tabs';
 import NavBar from './components/NavBar'
 import Info from './components/Info'
+import Map from './components/Map'
 import commonStyles from "./styles/common.css";
 
 export default class hackmty extends Component {
@@ -30,6 +33,7 @@ export default class hackmty extends Component {
       <View style={commonStyles.container} >
         <NavBar navTitle={this.state.navTitle} />
         {this.state.page == 'info' ? <Info /> : null}
+        {this.state.page == 'map' ? <Map /> : null}
         <Tabs selected={this.state.page} style={{backgroundColor:'white'}}
               selectedStyle={{color:'#243e92'}} onSelect={el=>this.setState({page:el.props.name})}>
             <Text name="map" selectedIconStyle={{borderTopWidth:2,borderTopColor:'#243e92'}}>Mapa</Text>

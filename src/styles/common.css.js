@@ -12,11 +12,10 @@ const Common = {
         marginBottom: 30,
     },
     title: {
-        color: 'white',
+        color: 'black',
         textAlign: 'center',
         fontSize: 35,
-        fontWeight: '800',
-        marginBottom: 15
+        fontWeight: 'bold',
     },
     navBar: {
         width: 360,
