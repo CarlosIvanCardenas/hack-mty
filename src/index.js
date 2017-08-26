@@ -11,21 +11,30 @@ import {
   Text,
   View
 } from 'react-native';
+import Tabs from 'react-native-tabs';
+import NavBar from './components/NavBar'
+import Info from './components/Info'
+import commonStyles from "./styles/common.css";
 
 export default class hackmty extends Component {
+  constructor(props) {
+        super(props)
+        this.state = {
+            navTitle: 'Titulo',
+            page: 'map'
+        }
+    }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+      <View style={commonStyles.container} >
+        <NavBar navTitle={this.state.navTitle} />
+        {}
+        <Tabs selected={this.state.page} style={{backgroundColor:'white'}}
+              selectedStyle={{color:'#243e92'}} onSelect={el=>this.setState({page:el.props.name})}>
+            <Text name="map" selectedIconStyle={{borderTopWidth:2,borderTopColor:'#243e92'}}>Mapa</Text>
+            <Text name="info" selectedIconStyle={{borderTopWidth:2,borderTopColor:'#243e92'}}>Información</Text>
+        </Tabs>
       </View>
     );
   }
@@ -37,16 +46,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
 
