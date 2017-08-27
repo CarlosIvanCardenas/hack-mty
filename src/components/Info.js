@@ -6,9 +6,10 @@ import {
     Text,
     StyleSheet,
     TouchableHighlight,
-    ScrollView
+    ScrollView,
+    Image
 } from 'react-native'
-
+import ModalDropdown from 'react-native-modal-dropdown';
 import commonStyles from "../styles/common.css";
 
 class Info extends Component{
@@ -16,18 +17,37 @@ class Info extends Component{
         super(props)
         this.state = {
             page: '',
-            title: 'Lorem ipsum',
-            subtitle: 'Lorem ipsum dolor sit amet.',
-            info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur aliquam tempus. Quisque eu magna lobortis, commodo dui dapibus, porta massa. Aliquam vel sapien velit. Aliquam posuere augue vel ullamcorper posuere. Maecenas sit amet purus in enim efficitur feugiat id vitae purus. Maecenas non neque hendrerit, porttitor risus suscipit, aliquam turpis. Duis varius nibh sed nisi faucibus, at tristique ipsum lobortis. Donec interdum orci ut condimentum fermentum. Fusce pretium leo ut fermentum semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc convallis accumsan velit non porttitor. Proin risus ante, pharetra eget urna nec, vestibulum dignissim augue.'
+            indicador: ['Cobertura preescolar: niños de 3 a 5 años inscritos en preescolar', 'Cobertura media superior: jóvenes de 15 a 17 años inscritos en educación media superior', 'Logro académico: alumnos de nivel 1 o menor en la prueba PISA', 'Calidad docente: docentes "no idóneos" para una plaza en educación pública'],
+            fuente: ['Fuente: Secretaría de Educación Pública/CONAPO', 'Fuente: Secretaría de Educación Pública/CONAPO', 'Fuente: INEE', 'Fuente: INEE'],
+            title: '',
+            subtitle: '',
+            icon: require('../../assets/img/gob.png'),
+            array: [require('../../assets/img/Educacion.png'), require('../../assets/img/salud.png'), require('../../assets/img/desarrolloSocial.png'), require('../../assets/img/desarrolloSustentable.png')]
         }
+    }
+
+    getData(idx, value) {
+        this.setState({
+            title: this.state.indicador[idx],
+            subtitle: this.state.fuente[idx],
+            icon: this.state.array[idx]
+        })
     }
 
     render(){
         return(
-            <ScrollView  >
+            <ScrollView style={{flex: 1, backgroundColor: 'white',marginBottom: 60, paddingLeft: 15, paddingRight: 15}} contentContainerStyle={{justifyContent: 'center', alignItems: 'center',}} >
+                <ModalDropdown 
+                    options={this.state.indicador}
+                    style={commonStyles.boton}
+                    textStyle={commonStyles.textoBoton}
+                    dropdownStyle={{width: 285, height: 100, marginTop: 5, marginLeft: 20}}
+                    defaultValue={'Indicador'}
+                    onSelect={(idx, value) => this.getData(idx, value)}
+                />
                 <Text style={commonStyles.infoTitle} >{this.state.title}</Text>
                 <Text style={commonStyles.infoSubtitle} >{this.state.subtitle}</Text>
-                <Text style={commonStyles.info} >{this.state.info}</Text>
+                <Image style={commonStyles.icon} source={this.state.icon} />
             </ScrollView>
         );
     }

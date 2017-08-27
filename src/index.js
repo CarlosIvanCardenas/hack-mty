@@ -19,6 +19,17 @@ import Info from './components/Info'
 import Home from './components/Home'
 import commonStyles from "./styles/common.css";
 
+import * as firebase from 'firebase';
+const firebaseConfig = {
+  apiKey: "AIzaSyC6O7qwaLPjJZoqTkpKW1Wgfo2nAKedbvY",
+  authDomain: "hack-mty.firebaseapp.com",
+  databaseURL: "https://hack-mty.firebaseio.com",
+  projectId: "hack-mty",
+  storageBucket: "hack-mty.appspot.com",
+  messagingSenderId: "780207897633"
+};
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
 export default class hackmty extends Component {
   constructor(props) {
     super(props)

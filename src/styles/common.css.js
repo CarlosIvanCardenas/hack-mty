@@ -2,6 +2,7 @@ const Common = {
 
     container: {
         flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'white',
     },
@@ -9,8 +10,12 @@ const Common = {
         width: 300, 
         height: 80,
     },
+    icon:{
+        width: 200, 
+        height: 200,
+    },
     title: {
-        color: 'black',
+        color: '#5b2144',
         textAlign: 'center',
         fontSize: 35,
         fontWeight: 'bold',
@@ -18,7 +23,6 @@ const Common = {
     boton:{
         width: 325,
         height: 55,
-        alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 30,
         borderColor: '#00b5b2',
@@ -26,12 +30,13 @@ const Common = {
         marginTop: 10,
     },
     textoBoton:{
+        textAlign: 'center',
         fontWeight: 'bold',
         fontSize: 20,
         color: '#00b5b2'
     },
     navBar: {
-        width: 360,
+        width: 800,
         height: 100,
         backgroundColor: '#5b2144',  
         elevation: 3,
@@ -48,21 +53,27 @@ const Common = {
         fontWeight: 'bold',
     },
     infoTitle: {
-        color: 'black',
+        color: '#5b2144',
         textAlign: 'center',
-        fontSize: 40,
+        fontSize: 30,
         fontWeight: 'bold',
+        marginBottom: 20
     },
     infoSubtitle: {
-        color: 'black',
+        color: '#5b2144',
         textAlign: 'center',
         fontSize: 20,
         fontWeight: 'bold',
+        marginBottom: 20
     },
     info: {
-        color: 'black',
+        color: '#5b2144',
         textAlign: 'center',
         fontSize: 14,
+        borderBottomColor: '#5b2144',
+        borderBottomWidth: 2,
+        paddingBottom: 15,
+        marginBottom: 10
     }
 };
 
