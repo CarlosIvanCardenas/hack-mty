@@ -5,19 +5,13 @@ import {
     View,
     Text,
     StyleSheet,
-    TouchableHighlight
+    TouchableHighlight,
+    Image
 } from 'react-native'
 
 import commonStyles from "../styles/common.css";
 
 class NavBar extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            navTitle: '',
-
-        }
-    }
 
     componentWillReceiveProps(nextProps) {
       this.setState({
@@ -29,7 +23,7 @@ class NavBar extends Component {
         return (
             <View style={commonStyles.navBar} >
                 <View style={commonStyles.navBarContainer} >
-                    <Text style={commonStyles.navBarTitle} > {this.props.navTitle} </Text>
+                    <Image style={commonStyles.logo} source={require('../../assets/img/logoNL.png')} />
                 </View>
             </View>
         );

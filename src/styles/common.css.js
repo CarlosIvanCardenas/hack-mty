@@ -6,10 +6,8 @@ const Common = {
         backgroundColor: 'white',
     },
     logo:{
-        width: 325, 
-        height: 120,
-        marginTop: 107,
-        marginBottom: 30,
+        width: 300, 
+        height: 80,
     },
     title: {
         color: 'black',
@@ -17,18 +15,32 @@ const Common = {
         fontSize: 35,
         fontWeight: 'bold',
     },
+    boton:{
+        width: 325,
+        height: 55,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 30,
+        borderColor: '#00b5b2',
+        borderWidth: 2,
+        marginTop: 10,
+    },
+    textoBoton:{
+        fontWeight: 'bold',
+        fontSize: 20,
+        color: '#00b5b2'
+    },
     navBar: {
         width: 360,
-        height: 55,
-        backgroundColor: '#243e92',  
+        height: 100,
+        backgroundColor: '#5b2144',  
         elevation: 3,
     },
     navBarContainer: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center',
-        paddingLeft: 60,
     },
     navBarTitle: {
         color: 'white',
